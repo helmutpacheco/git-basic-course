@@ -1,0 +1,19 @@
+#Cool presentation for your commits
+#This command will create a new operation in git, we will call it superlog
+git config --global alias.superlog 
+#Allows you to manipulate the output list of confirmations (confirmations) made. 
+log 
+#Add a small ASCII graph that shows your history of branches and junctions.
+--graph 
+#Abbreviates the length of the SHA1 commit value, showing by default the first 7 characters. To configure the amount we can see we use --abbrev = n
+--abbrev-commit
+#Print out the ref names of any commits that are shown
+--decorate
+#Pretty-print the contents of the commit logs in a given format, where <format> can be one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string>.
+--format=format(...)
+
+#The total instruction is:
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+#To call the new function, we write:
+> git superlog
